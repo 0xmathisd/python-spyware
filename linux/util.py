@@ -23,3 +23,4 @@ class Errors:
         HELP CENTER 
     '''
     HELP = '\n'+(' '*14)+Colors.BOLD+'-- help center --'+Colors.ENDC+(' '*14)+'\n '+Colors.UNDERLINE+'usage :\n'+Colors.ENDC+'      python3 main.py [function1] [function2] ... \n\n '+Colors.UNDERLINE+'available functions :\n'+Colors.ENDC+'   + the keylogger : capture all keyboard inputs\n      -> [keylogger --file inputs.txt] :    write in ./RESULT/inputs.txt\n      -> [keylogger --ip ?.?.?.?] :    send log to the server ip\n\n'+'   + the spycam : capture picture from the camera with a regular time interval\n     -> [spycam --delay 20] : every 20 seconds an image will be added to ./PICTURE/'+'\n '+Colors.UNDERLINE+'example usage :'+Colors.ENDC+'\n   python3 main.py keylogger --file truc.txt\n'
+    
