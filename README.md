@@ -13,7 +13,7 @@ A suite of python tools dedicated to spying a machine running on GNU / linux.
 
 ## How to use
 ```diff
-- Use  `--help` to find up-to-date information !
+- `python3 linux/main.py --help` -> to find up-to-date information !
 ```
 
 Be root on the victim's computer, then
