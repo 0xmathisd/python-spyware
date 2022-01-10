@@ -1,12 +1,22 @@
-# python-spyware
-A suite of tools dedicated to spying on a machine running on GNU / linux. (Keylogger firstly)
+# Python spyware
+A suite of python tools dedicated to spying a machine running on GNU / linux.
 
+## available tools
 
-The package provides callbacks for mouse and keyboard events
+- the keylogger : capture all keyboard inputs
+- the spycam : capture picture from the camera with a regular time interval
 
- 
- &1112
+## Modules required
 
+- Opencv2
+- Pyxhook
 
+# How to use
 
+Be root on the victim's computer, then
+```
+nohup python3 linux/main.py [functions] [options]
+```
+
+Stolen data can be found by default at `./RESULT/`
  
