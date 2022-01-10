@@ -1,7 +1,7 @@
 # Python spyware
 A suite of python tools dedicated to spying a machine running on GNU / linux.
 
-## Warning <img src="https://www.reed-sensor.com/wp-content/uploads/icon_disclaimer.jpg" width="25" height="25">
+##  <img src="https://www.reed-sensor.com/wp-content/uploads/icon_disclaimer.jpg" width="25" height="25"> Warning <img src="https://www.reed-sensor.com/wp-content/uploads/icon_disclaimer.jpg" width="25" height="25">
 
 This program was not created for the purpose of stealing private information from anyone, this was created for educational and preventative purposes ONLY. I do not endorse this kind of action. Using or integrating my work in anything is not without risk for you, I am not responsible for any misappropriation. No one can be held responsible for your fraudulent actions.
 
